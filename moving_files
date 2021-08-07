@@ -18,3 +18,6 @@ for i in filename_sheet['**column in which names of files are stored**']:
     for pdfs in pdf_names:
         if i == pdfs:
            shutil.copy(r""+folder + pdfs +".pdf", save_path)
+           
+           # shutil.copy(): copies the file from one folder to another
+           # shutil.move(): moves the file from one folder to another
