@@ -3,7 +3,7 @@ from os.path import isfile, join
 from os import listdir
 import pandas as pd
 
-folder = r"C:\Users\kbinm18453\Desktop\kreditbee\test\\"
+folder = r"**the original folder where files are stored previously**\\"           
 pdf_files = [f for f in listdir(folder) 
              if isfile(join(folder, f))]
 pdf_names = []
@@ -11,10 +11,10 @@ for pdf in pdf_files:
     a = pdf.split(".")
     pdf_names.append(a[0])
     
-save_path = r"C:\Users\kbinm18453\Desktop\kreditbee\test2"
+save_path = r"**the new folder where you wish to save the files**"        
 
-filename_sheet = pd.read_excel(r"C:\Users\kbinm18453\Desktop\kreditbee\test\file_names.xlsx")
-for i in filename_sheet['filename']:
+filename_sheet = pd.read_excel(r"**path of the excel sheet in which the names of files to move are stored**")        
+for i in filename_sheet['**column in which names of files are stored**']:
     for pdfs in pdf_names:
         if i == pdfs:
            shutil.copy(r""+folder + pdfs +".pdf", save_path)
